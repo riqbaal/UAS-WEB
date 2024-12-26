@@ -197,35 +197,40 @@
           </div>
         </div>
 
-        <!-- Order Summary -->
-        <div class="col-lg-4">
-          <div class="total-section">
-            <h4 class="mb-4">Order Summary</h4>
-            <div class="d-flex justify-content-between mb-3">
-              <span>Subtotal</span>
-              <span id="subtotal">Rp 2.100.000</span>
+<!-- Order Summary -->
+<div class="col-lg-4">
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <h4 class="card-title mb-4">Order Summary</h4>
+            
+            <div class="d-flex justify-content-between mb-2">
+                <span class="text-muted">Subtotal</span>
+                <span class="fw-bold" id="subtotal">Rp 2.100.000</span>
             </div>
-            <div class="d-flex justify-content-between mb-3">
-              <span>Shipping</span>
-              <span>350.000</span>
+            
+            <div class="d-flex justify-content-between mb-2">
+                <span class="text-muted">Shipping</span>
+                <span class="fw-bold">Rp 350.000</span>
             </div>
-            <hr class="text-light">
+            
+            <hr>
+            
             <div class="d-flex justify-content-between mb-4">
-              <h5 class="mb-0">Total</h5>
-              <h5 class="mb-0" id="totalAmount">Rp 2.450.000</h5>
+                <h5 class="mb-0">Total</h5>
+                <h5 class="mb-0 text-dark-red" id="totalAmount">Rp 2.450.000</h5>
             </div>
+            
             <div class="d-grid gap-2">
-              <a href="<?= base_url('checkout')?>" class="btn btn-light btn-custom">
-                <i class="fas fa-credit-card me-2"></i>Proceed to Checkout
-              </a>
-              <a href="<?= base_url()?>" class="btn btn-outline-light btn-custom">
-                <i class="fas fa-arrow-left me-2"></i>Continue Shopping
-              </a>
+                <a href="<?= base_url('checkout')?>" class="btn btn-dark-red">
+                    <i class="fas fa-credit-card me-2"></i>Checkout
+                </a>
+                <a href="<?= base_url()?>" class="btn btn-outline-secondary">
+                    <i class="fas fa-arrow-left me-2"></i>Continue Shopping
+                </a>
             </div>
-          </div>
         </div>
-      </div>
     </div>
+</div>
 
     <!-- Footer remains the same -->
     <footer class="footer py-4 mt-5">

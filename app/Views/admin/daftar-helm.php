@@ -12,11 +12,9 @@
     <table class="table table-stripped">
         <thead>
             <tr>
-                <th scope="col">#</th>
+                <th scope="col">No</th>
                 <th scope="col">Nama Helm</th>
                 <th scope="col">Merek</th>
-                <th scope="col"></th>
-                
                 <th scope="col">Gambar</th>
                 <th scope="col">Harga</th>
                 <th scope="col">Aksi</th>
@@ -28,8 +26,7 @@
                 <th scope="row"><?=$helm['id']?></th>
                 <td><?= $helm['nama']?></td>
                 <td><?= $helm['merek']?></td>
-                <td><?= $helm['spesifikasi']?></td>
-                <td><?= $helm['tahun_rilis']?></td>
+                
                 <td>
                     <img src="<?= base_url($helm['gambar'])?>" alt="" style="width: 150px; height: auto;">
                 </td>

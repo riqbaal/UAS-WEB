@@ -23,11 +23,19 @@
                 <th scope="row">1</th>
                 <td>Rahmat Iqbal</td>
                 <td>08235160808</td>
-                <td>Sungai Duren</td>
+                <td>Selincah</td>
                 <td>
                     <a href="<?= base_url('admin/pelanggan/hapus') ?>" class="btn btn-danger btn-sm">Hapus</a>
                 </td>
             </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>Ardhea</td>
+                <td>08215601721</td>
+                <td>Kasang Kumpeh</td>
+                <td>
+                    <a href="<?= base_url('admin/pelanggan/hapus') ?>" class="btn btn-danger btn-sm">Hapus</a>
+                </td>
             <!-- Tambahkan lebih banyak baris di sini jika diperlukan -->
         </tbody>
     </table>

@@ -3,151 +3,149 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Toko Helm Iqbal - Premium Helm Store</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-      crossorigin="anonymous"
-    />
+    <title>Toko Helm Iqbal</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
     <style>
-      .navbar-custom {
-        background-color: #8B0000;
+      :root {
+        --dark-red: #8B0000;
       }
-      .hero-section {
-        background-color: #f3f4f6;
-        border-radius: 15px;
-        padding: 2rem;
+      
+      body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f8f9fa;
       }
-      .card {
-        border: 1px solid #8B0000;
-        border-radius: 10px;
-      }
-      .card-img-top {
-        height: 200px;
-        object-fit: cover;
-      }
-      .price-tag {
-        color: #8B0000;
-        font-weight: bold;
-        font-size: 1.2rem;
-      }
-      .footer {
-        background-color: #8B0000;
-        color: white;
+      
+      .navbar {
+        background-color: var(--dark-red);
         padding: 1rem 0;
       }
+      
+      .hero-section {
+        background-color: white;
+        padding: 4rem 0;
+        margin-bottom: 3rem;
+        border-bottom: 1px solid #dee2e6;
+      }
+      
+      .card {
+        border: none;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        transition: transform 0.2s;
+      }
+      
+      .card:hover {
+        transform: translateY(-5px);
+      }
+      
+      .price-tag {
+        color: var(--dark-red);
+        font-size: 1.25rem;
+        font-weight: bold;
+      }
+      
       .btn-dark-red {
-        background-color: #8B0000;
+        background-color: var(--dark-red);
+        color: white;
+        border: none;
+      }
+      
+      .btn-dark-red:hover {
+        background-color: #660000;
         color: white;
       }
+      
       .btn-outline-dark-red {
-        border: 1px solid #8B0000;
-        color: #8B0000;
+        border: 1px solid var(--dark-red);
+        color: var(--dark-red);
+      }
+      
+      .btn-outline-dark-red:hover {
+        background-color: var(--dark-red);
+        color: white;
+      }
+      
+      footer {
+        background-color: var(--dark-red);
+        color: white;
+        padding: 2rem 0;
+        margin-top: 4rem;
       }
     </style>
   </head>
   <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom mb-4">
+    <nav class="navbar navbar-expand-lg navbar-dark">
       <div class="container">
-        <a class="navbar-brand" href="#">Toko Helm Iqbal</a>
+        <a class="navbar-brand fw-bold" href="#">
+          <i class="fas fa-helmet-safety me-2"></i>
+          Toko Helm Iqbal
+        </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link" href="#">Home</a>
+              <a class="nav-link" href="#products">Produk</a>
             </li>
             <li class="nav-item">
-              <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
+              <button class="btn btn-light" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
             </li>
             <li class="nav-item ms-2">
-              <a href="<?= base_url() ?>auth/logout" class="btn btn-danger">Logout</a>
-            </li>
-            <li class="nav-item">
-              <a href="<?= base_url() ?>chart" class="nav-link">Cart <span class="badge bg-warning">3</span></a>
+              <a href="<?= base_url() ?>chart" class="btn btn-outline-light">
+                <i class="fas fa-shopping-cart me-1"></i>
+                Cart <span class="badge bg-danger">3</span>
+              </a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
 
-    <!-- Login Modal -->
-    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="loginModalLabel">Login</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    <!-- Hero Section -->
+    <div class="hero-section">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <h1 class="display-4 fw-bold mb-4">Temukan Helm <span class="text-dark-red">Impianmu</span></h1>
+            <p class="lead mb-4">Koleksi helm berkualitas dengan harga terbaik sejagad Jambi</p>
+            <a href="#products" class="btn btn-dark-red btn-lg px-4">
+              Lihat Koleksi
+            </a>
           </div>
-          <div class="modal-body">
-            <form>
-              <div class="mb-3">
-                <label for="email" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="email" placeholder="Enter your email" required />
-              </div>
-              <div class="mb-3">
-                <label for="password" class="form-label">Password</label>
-                <input type="password" class="form-control" id="password" placeholder="Enter your password" required />
-              </div>
-              <button type="submit" class="btn btn-dark-red w-100">Login</button>
-            </form>
+          <div class="col-md-6">
+            <div class="p-4">
+              <img src="images/helm2.jpg" alt="Hero Helmet" class="img-fluid rounded-3 shadow">
+            </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="container">
-      <!-- Hero Section -->
-      <div class="row hero-section mb-5 align-items-center">
-        <div class="col-md-6 animate__animated animate__fadeInLeft">
-          <span class="badge bg-dark-red mb-3">Premium Helmet Store</span>
-          <h1 class="display-4 fw-bold mb-3 text-dark-red">Discover Your Perfect <br>Helmet Style</h1>
-          <p class="lead mb-4 text-muted">Temukan koleksi helm berkualitas dengan harga terbaik sejagad Jambi</p>
-          <div class="d-flex gap-3">
-            <a href="#products" class="btn btn-dark-red btn-lg shadow-sm">
-              <i class="fas fa-shopping-bag me-2"></i>Explore Products
-            </a>
-            <a href="#about" class="btn btn-outline-dark-red btn-lg">
-              <i class="fas fa-info-circle me-2"></i>Learn More
-            </a>
-          </div>
-        </div>
-        <div class="col-md-6 animate__animated animate__fadeInRight">
-          <div class="search-form bg-white shadow-sm rounded p-4">
-            <h2 class="h4 mb-4 text-dark-red">
-              <i class="fas fa-search me-2"></i>Find Your Helmet
-            </h2>
-            <form action="">
-              <div class="mb-3">
-                <div class="input-group">
-                  <span class="input-group-text bg-dark-red text-white">
-                    <i class="fas fa-helmet-safety"></i>
-                  </span>
-                  <input type="text" class="form-control" placeholder="Brand (Arai, Njs, Nhk, Kyt)" />
-                </div>
-              </div>
-              <button class="btn btn-dark-red w-100">Search</button>
-            </form>
-          </div>
-        </div>
-      </div>
 
-      <!-- Products Section -->
-      <h2 class="h3 mb-4" id="products">pilihan produk</h2>
-      <div class="row g-4 mb-5">
+    <!-- Products Section -->
+    <div class="container" id="products">
+      <h2 class="text-center mb-5">Koleksi Helm Terbaik</h2>
+    
+      <div class="row g-4">
+       
         <!-- Product Cards -->
         <div class="col-md-3">
           <div class="card h-100">
+            <div class="position-absolute top-0 end-0 p-2">
+              <span class="badge bg-danger">New</span>
+            </div>
             <img src="images/helm1.jpg" class="card-img-top" alt="helm full face" />
             <div class="card-body">
               <h5 class="card-title">helm full face</h5>
               <p class="price-tag mb-3">Rp 900.000,-</p>
               <div class="d-flex justify-content-between align-items-center">
-                <a href="<?= base_url() ?>chart" class="btn btn-dark-red">Add to Cart</a>
-                <button class="btn btn-outline-dark-red"><i class="fas fa-heart"></i></button>
+                <a href="<?= base_url() ?>chart" class="btn btn-dark-red">
+                  <i class="fas fa-cart-plus me-2"></i>Add to Cart
+                </a>
+                <button class="btn btn-outline-dark-red">
+                  <i class="fas fa-heart"></i>
+                </button>
               </div>
             </div>
           </div>
@@ -160,8 +158,12 @@
               <h5 class="card-title">half face</h5>
               <p class="price-tag mb-3">Rp 700.000,-</p>
               <div class="d-flex justify-content-between align-items-center">
-                <a href="<?= base_url() ?>chart" class="btn btn-dark-red">Add to Cart</a>
-                <button class="btn btn-outline-dark-red"><i class="fas fa-heart"></i></button>
+                <a href="<?= base_url() ?>chart" class="btn btn-dark-red">
+                  <i class="fas fa-cart-plus me-2"></i>Add to Cart
+                </a>
+                <button class="btn btn-outline-dark-red">
+                  <i class="fas fa-heart"></i>
+                </button>
               </div>
             </div>
           </div>
@@ -169,18 +171,26 @@
 
         <div class="col-md-3">
           <div class="card h-100">
+            <div class="position-absolute top-0 end-0 p-2">
+              <span class="badge bg-success">Sale</span>
+            </div>
             <img src="images/helm3.jpg" class="card-img-top" alt="helm retro" />
             <div class="card-body">
               <h5 class="card-title">helm retro</h5>
               <p class="price-tag mb-3">Rp 500.000,-</p>
               <div class="d-flex justify-content-between align-items-center">
-                <a href="<?= base_url() ?>chart" class="btn btn-dark-red">Add to Cart</a>
-                <button class="btn btn-outline-dark-red"><i class="fas fa-heart"></i></button>
+                <a href="<?= base_url() ?>chart" class="btn btn-dark-red">
+                  <i class="fas fa-cart-plus me-2"></i>Add to Cart
+                </a>
+                <button class="btn btn-outline-dark-red">
+                  <i class="fas fa-heart"></i>
+                </button>
               </div>
             </div>
           </div>
         </div>
 
+        
         <div class="col-md-3">
           <div class="card h-100">
             <img src="images/helm4.jpg" class="card-img-top" alt="helm cross" />
@@ -188,26 +198,32 @@
               <h5 class="card-title">helm cross</h5>
               <p class="price-tag mb-3">Rp 1.000.000,-</p>
               <div class="d-flex justify-content-between align-items-center">
-                <a href="<?= base_url() ?>chart" class="btn btn-dark-red">Add to Cart</a>
-                <button class="btn btn-outline-dark-red"><i class="fas fa-heart"></i></button>
+                <a href="<?= base_url() ?>chart" class="btn btn-dark-red">
+                  <i class="fas fa-cart-plus me-2"></i>Add to Cart
+                </a>
+                <button class="btn btn-outline-dark-red">
+                  <i class="fas fa-heart"></i>
+                </button>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-
+     <!-- Product cards here -->
+     ...existing product cards...
+      </div>
+    </div>
+    <div class="row g-4 mb-5">
     <!-- Footer -->
-    <footer class="footer text-center">
+    <footer class="text-center">
       <div class="container">
         <p class="mb-0">©2024 Toko Helm Iqbal. All Rights Reserved.</p>
       </div>
     </footer>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-      crossorigin="anonymous"
-    ></script>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

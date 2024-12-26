@@ -13,9 +13,6 @@
             <label for="merek">Merek</label>
             <input type="text" class="form-control" name="merek" id="merek">
         </div>
-        
-        </div>
-        
         <div class="mb-3">
             <label for="gambar">Gambar</label>
             <input type="file" name="gambar" id="gambar" class="form-control">
